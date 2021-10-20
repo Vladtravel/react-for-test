@@ -55,26 +55,32 @@ function LoginForm() {
         </div>
         <div className={s.loginFormBody}>
           <form onSubmit={handleSubmit}>
-            <label className={s.loginFormBody__label}>
-              Email address
-              <input
-                className={s.loginFormBody__input}
-                type="email"
-                name="email"
-                value={email}
-                onChange={handleChange}
-              />
-            </label>
-            <label className={s.loginFormBody__label}>
-              Password
-              <input
-                className={s.loginFormBody__input}
-                type="password"
-                name="password"
-                value={password}
-                onChange={handleChange}
-              />
-            </label>
+            <div className={s.EmailForm}>
+              <label className={s.loginFormBody__label}>
+                Email address
+                <div className={s.inputIconEmail}></div>
+                <input
+                  className={s.loginFormBody__input}
+                  type="email"
+                  name="email"
+                  value={email}
+                  onChange={handleChange}
+                />
+              </label>
+            </div>
+            <div className={s.PasswordForm}>
+              <label className={s.loginFormBody__label}>
+                Password
+                <div className={s.inputIconPassword}></div>
+                <input
+                  className={s.loginFormBody__input}
+                  type="password"
+                  name="password"
+                  value={password}
+                  onChange={handleChange}
+                />
+              </label>
+            </div>
             <button className={s.loginFormBody__button} type="submit">
               Sign In
             </button>
