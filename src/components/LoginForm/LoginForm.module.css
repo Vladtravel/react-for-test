@@ -1,0 +1,80 @@
+.loginForm {
+  width: 360px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 50px;
+  padding: 2px;
+  background-color: white;
+  border-radius: 6px;
+}
+
+.loginForm__header {
+  color: #ffffff;
+  background-color: #2a1d1a;
+  margin-bottom: 15px;
+  text-align: center;
+  font-size: 14px;
+  padding: 2px;
+  border-bottom: 1px solid transparent;
+  border-top-right-radius: 3px;
+  border-top-left-radius: 3px;
+}
+
+.loginFormBody {
+  width: 310px;
+  padding: 20px;
+  border: 1px solid rgb(216, 222, 228);
+  border-radius: 6px;
+  background-color: #f6f8fa;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: left;
+}
+
+.loginFormBody__label {
+  font-weight: 400;
+  margin-bottom: 10px;
+}
+
+.loginFormBody__input {
+  width: 100%;
+  padding: 5px 12px;
+  margin-top: 5px;
+  margin-bottom: 15px;
+  border: 1px solid rgb(216, 222, 228);
+  font-size: 14px;
+  line-height: 20px;
+  border-radius: 6px;
+  outline: none;
+}
+
+.loginFormBody__button {
+  padding: 5px 16px;
+  cursor: pointer;
+  border: 1px solid;
+  border: transparent;
+  border-radius: 6px;
+  display: block;
+  width: 100%;
+  text-align: center;
+  background-color: #2da44e;
+  color: white;
+  box-shadow: 4px 4px 8px 0px rgba(34, 37, 80, 0.46);
+}
+
+.loginFormFooter {
+  padding: 10px;
+  display: block;
+  text-align: center;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  background-color: #f5f5f5;
+  color: black;
+  font-size: 15px;
+  text-decoration: underline;
+  width: 200px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: auto;
+  margin-right: auto;
+}
