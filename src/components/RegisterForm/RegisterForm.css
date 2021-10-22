@@ -1,0 +1,13 @@
+.regForm {
+  border: 1px solid black;
+  padding: 10px;
+  width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.regTitle {
+  width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+}

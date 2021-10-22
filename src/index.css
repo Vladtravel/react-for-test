@@ -6,9 +6,6 @@ html {
 }
 
 body {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.525), rgba(0, 0, 0, 0.6)), url(/src/Images/loginPhoto.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
   margin: 0;
   font-family: Roboto, sans-serif;
   font-style: normal;
