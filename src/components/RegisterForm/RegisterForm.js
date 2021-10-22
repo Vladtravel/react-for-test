@@ -18,16 +18,16 @@ const useStyles = makeStyles({
 });
 
 function RegisterForm() {
-  // const [name, setName] = useState("");
+  const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const dispatch = useDispatch();
 
   const handleChange = (e) => {
     switch (e.currentTarget.name) {
-      // case "name":
-      //   setName(e.currentTarget.value);
-      //   break;
+      case "name":
+        setName(e.currentTarget.value);
+        break;
       case "email":
         setEmail(e.currentTarget.value);
         break;
@@ -40,12 +40,12 @@ function RegisterForm() {
   };
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (email.trim() === "" || password.trim() === "") {
+    if (name.trim() === "" || email.trim() === "" || password.trim() === "") {
       alert("Fill all fields!");
       return;
     }
-    dispatch(operations.register({ email, password }));
-    // setName("");
+    dispatch(operations.register({ name, email, password }));
+    setName("");
     setEmail("");
     setPassword("");
   };
@@ -57,7 +57,7 @@ function RegisterForm() {
       <h1 className="regTitle">Register Page </h1>
 
       <form onSubmit={handleSubmit} className="regForm" autoComplete="off">
-        {/* <TextField
+        <TextField
           type="text"
           name="name"
           value={name}
@@ -66,7 +66,7 @@ function RegisterForm() {
           size="small"
           label="Name"
           variant="outlined"
-        /> */}
+        />
 
         <TextField
           type="email"
