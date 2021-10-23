@@ -41,7 +41,7 @@
   text-align: left;
 }
 
-.EmailForm {
+.NameForm {
   position: relative;
 }
 
@@ -63,12 +63,45 @@
   outline: none;
 }
 
-.inputIconEmail {
+.inputIconName {
   background-image: url(../../Images/user.png);
   background-size: 20px 20px;
   position: absolute;
   bottom: 23px;
   left: 12px;
+  width: 18px;
+  height: 18px;
+  background-repeat: no-repeat;
+}
+
+.inputIconName::after {
+  content: "";
+  position: absolute;
+  right: -11px;
+  top: -10px;
+  bottom: -10px;
+  width: 1px;
+  opacity: 0.5;
+  background-color: rgba(212, 212, 212, 0);
+  background-image: linear-gradient(
+    to top,
+    rgba(212, 212, 212, 0) 0,
+    #d4d4d4 30%,
+    #d4d4d4 70%,
+    rgba(212, 212, 212, 0) 100%
+  );
+}
+
+.EmailForm {
+  position: relative;
+}
+
+.inputIconEmail {
+  background-image: url(../../Images/mail2.png);
+  background-size: 18px 16px;
+  position: absolute;
+  bottom: 21px;
+  left: 13px;
   width: 18px;
   height: 18px;
   background-repeat: no-repeat;

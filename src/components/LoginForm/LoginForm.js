@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import operations from "../../redux/operations";
@@ -71,9 +72,13 @@ function LoginForm() {
               </button>
             </form>
           </div>
-          <a className={s.loginFormFooter} href="">
+          <NavLink
+            to="/register"
+            className={s.loginFormFooter}
+            activeClassName="activeLink"
+          >
             Create an account
-          </a>
+          </NavLink>
         </div>
       </div>
     </>

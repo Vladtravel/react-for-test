@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
-import logo from "./avatar.png";
+// import logo from "./avatar.png";
 import selectors from "../../redux/selectors";
 import operations from "../../redux/operations";
 import "./UserMenu.css";
@@ -19,6 +19,7 @@ const useStyles = makeStyles({
 function UserMenu() {
   const name = useSelector(selectors.getUserName);
   const email = useSelector(selectors.getUserEmail);
+  const avatarURL = useSelector(selectors.getUserAvatarURL);
 
   const dispatch = useDispatch();
 
@@ -26,7 +27,7 @@ function UserMenu() {
 
   return (
     <div className="userMenu">
-      <img src={logo} alt="" width="32" className="userAvatar" />
+      <img src={avatarURL} alt="" width="32" className="userAvatar" />
       <span className="userName">
         Welcome, <b>{name}</b> {` (${email})`}
       </span>

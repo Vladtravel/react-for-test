@@ -1,6 +1,8 @@
 import axios from "axios";
 import actions from "./actions";
 
+// axios.defaults.baseURL = "https://connections-api.herokuapp.com";
+
 axios.defaults.baseURL = "https://test-heroku-new.herokuapp.com/";
 const token = {
   set(token) {
@@ -26,6 +28,7 @@ const logIn = (credential) => (dispatch) => {
   axios
     .post("/users/login", credential)
     .then((res) => {
+      console.log(res);
       token.set(res.data.token);
       dispatch(actions.loginSuccess(res.data));
     })
@@ -62,15 +65,22 @@ const fetchContacts = () => (dispatch) => {
   dispatch(actions.fetchContactsRequest());
   axios
     .get("/contacts")
-    .then(({ data }) => dispatch(actions.fetchContactsSuccess(data)))
+    .then(({ data }) => {
+      console.log(data);
+      dispatch(actions.fetchContactsSuccess(data));
+    })
     .catch((error) => dispatch(actions.fetchContactsError(error.message)));
 };
 
 const addContact = (data) => (dispatch) => {
+  console.log(data);
   dispatch(actions.addContactsRequest());
   axios
     .post("/contacts", data)
-    .then(({ data }) => dispatch(actions.addContactsSuccess(data)))
+    .then(({ data }) => {
+      console.log(data);
+      dispatch(actions.addContactsSuccess(data));
+    })
     .catch((error) => dispatch(actions.addContactsError(error.message)));
 };
 

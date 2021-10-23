@@ -6,6 +6,7 @@ const isAuthenticated = (state) => state.auth.isAuthenticated;
 
 const getUserName = (state) => state.auth.user.name;
 const getUserEmail = (state) => state.auth.user.email;
+const getUserAvatarURL = (state) => state.auth.user.avatarURL;
 
 const getContactsItems = (state) => state.contacts.items;
 const getContactsFilter = (state) => state.contacts.filter;
@@ -27,6 +28,7 @@ const selectors = {
   isAuthenticated,
   getUserName,
   getUserEmail,
+  getUserAvatarURL,
   getContactsItems,
 
   getContactsError,

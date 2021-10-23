@@ -16,7 +16,6 @@ function App() {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(operations.getCurrentUser());
-    //eslint-disable-next-line
   }, []);
   return (
     <Container>
