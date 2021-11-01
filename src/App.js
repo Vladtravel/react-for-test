@@ -27,7 +27,7 @@ function App() {
           path="/signup"
           component={RegisterForm}
           restricted
-          redirectTo="/contacts"
+          redirectTo="/login"
         />
         <PublicRoute
           path="/login"
