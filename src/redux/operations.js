@@ -20,7 +20,7 @@ const register = (credential) => (dispatch) => {
     .post("/users/signup", credential)
     .then((res) => {
       token.set(res.data.token);
-      dispatch(actions.registerSuccess(res.data));
+      // dispatch(actions.registerSuccess(res.data));
     })
     .catch((error) => dispatch(actions.registerError(error.message)));
 };
