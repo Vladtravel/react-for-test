@@ -2,7 +2,6 @@ import React from "react";
 import { Route, Redirect } from "react-router-dom";
 import { useSelector } from "react-redux";
 import selectors from "../redux/selectors";
-import LoginForm from "../components/LoginForm/LoginForm";
 
 /**
  * - Если маршрут ограниченный, и пользователь залогинен, рендерит редирект на /contacts
@@ -14,11 +13,11 @@ const PublicRoute = ({ component: Component, redirectTo, ...routeProps }) => {
     <Route
       {...routeProps}
       render={(props) =>
+        // isAuthenticated && routeProps.restricted ? <Redirect to={redirectTo} /> : <Component {...props} />
         isAuthenticated && routeProps.restricted ? (
-          <Redirect to={redirectTo} />
+          <Redirect to="/contacts" />
         ) : (
-          <LoginForm />
-          // <Component {...props} />
+          <Redirect to="/login" />
         )
       }
     />
