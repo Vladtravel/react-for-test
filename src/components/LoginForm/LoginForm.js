@@ -73,7 +73,7 @@ function LoginForm() {
             </form>
           </div>
           <NavLink
-            to="/register"
+            to="/signup"
             className={s.loginFormFooter}
             activeClassName="activeLink"
           >
