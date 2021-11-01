@@ -24,7 +24,7 @@ function App() {
       <Switch>
         <PublicRoute path="/" exact component={HomeView} />
         <PublicRoute
-          path="/register"
+          path="/signup"
           component={RegisterForm}
           restricted
           redirectTo="/contacts"
