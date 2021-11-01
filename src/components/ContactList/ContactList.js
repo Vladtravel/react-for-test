@@ -49,10 +49,10 @@ const ContactList = () => {
   const contacts = useSelector(selectors.getContactList);
 
   useEffect(() => {
+    console.log(contacts);
     if (contacts.length) return;
     dispatch(operations.fetchContacts());
-    //eslint-disable-next-line
-  }, []);
+  }, [contacts, dispatch]);
 
   const classes = useStyles();
 

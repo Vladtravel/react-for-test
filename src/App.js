@@ -16,7 +16,8 @@ function App() {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(operations.getCurrentUser());
-  }, []);
+  }, [dispatch]);
+
   return (
     <Container>
       <AppBar />
