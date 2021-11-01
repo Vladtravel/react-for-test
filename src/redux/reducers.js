@@ -22,7 +22,7 @@ const error = createReducer(null, {
 });
 
 const isAuthenticated = createReducer(false, {
-  [actions.registerSuccess.type]: () => true,
+  // [actions.registerSuccess.type]: () => true,
   [actions.loginSuccess.type]: () => true,
   [actions.getCurrentUserSuccess.type]: () => true,
   [actions.logoutSuccess.type]: () => false,

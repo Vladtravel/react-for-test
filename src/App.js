@@ -25,7 +25,7 @@ function App() {
         <PublicRoute path="/" exact component={HomeView} />
         <PublicRoute
           path="/signup"
-          component={RegisterForm}
+          component={LoginForm}
           restricted
           redirectTo="/"
         />
