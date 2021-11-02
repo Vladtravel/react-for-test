@@ -38,7 +38,7 @@ function App() {
           path="/login"
           component={LoginForm}
           restricted
-          redirectTo="/contacts"
+          redirectTo="/confirmation"
         />
 
         <PrivateRoute
