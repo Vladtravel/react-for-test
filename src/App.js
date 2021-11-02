@@ -25,11 +25,11 @@ function App() {
       <Switch>
         <PublicRoute path="/" exact component={HomeView} />
 
-        <PrivateRoute
+        <PublicRoute
           path="/signup"
           component={RegisterForm}
           restricted
-          redirectTo="/confirmation"
+          redirectTo="/login"
         />
 
         {/* <Route path="/confirmation">
