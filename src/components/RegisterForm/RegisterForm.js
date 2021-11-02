@@ -35,6 +35,7 @@ function RegisterForm() {
     setName("");
     setEmail("");
     setPassword("");
+    window.history.pushState("/confirmation");
   };
 
   return (
