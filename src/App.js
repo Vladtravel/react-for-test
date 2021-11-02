@@ -29,11 +29,11 @@ function App() {
           path="/signup"
           component={RegisterForm}
           restricted
-          redirectTo="/confirmemail"
+          redirectTo="/confirmation"
         />
 
         <PublicRoute
-          path="/confirmemail"
+          path="/confirmation"
           component={ConfirmView}
           redirectTo="/login"
         />
