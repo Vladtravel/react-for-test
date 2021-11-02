@@ -5,7 +5,8 @@ import operations from "../../redux/operations";
 import s from "./RegisterForm.module.css";
 
 function RegisterForm() {
-  let history = useHistory();
+  const history = useHistory();
+
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -37,6 +38,7 @@ function RegisterForm() {
     setEmail("");
     setPassword("");
     history.push("/confirmation");
+    history.push("/confirmation", { from: "ConfirmView" });
   };
 
   return (
