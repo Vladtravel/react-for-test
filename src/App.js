@@ -24,19 +24,23 @@ function App() {
       <AppBar />
       <Switch>
         <PublicRoute path="/" exact component={HomeView} />
+
         <PublicRoute
           path="/signup"
           component={RegisterForm}
           restricted
-          redirectTo="/contacts"
+          redirectTo="/confirm"
         />
+
         <PublicRoute path="/confirm" component={ConfirmView} restricted />
+
         <PublicRoute
           path="/login"
           component={LoginForm}
           restricted
           redirectTo="/contacts"
         />
+
         <PrivateRoute
           path="/contacts"
           component={ContactsView}
