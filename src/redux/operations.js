@@ -1,5 +1,6 @@
 import axios from "axios";
 import actions from "./actions";
+import { useHistory } from "react-router-dom";
 
 // axios.defaults.baseURL = "https://connections-api.herokuapp.com";
 
@@ -15,12 +16,14 @@ const token = {
 };
 
 const register = (credential) => (dispatch) => {
+  const history = useHistory();
   dispatch(actions.registerRequest());
   axios
     .post("/users/signup", credential)
     .then((res) => {
       token.set(res.data.token);
       dispatch(actions.registerSuccess(res.data));
+      history.push("/confirmation");
     })
     .catch((error) => dispatch(actions.registerError(error.message)));
 };
