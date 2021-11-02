@@ -37,7 +37,7 @@ function RegisterForm() {
     setName("");
     setEmail("");
     setPassword("");
-    history.push("/confirmation");
+
     history.push("/confirmation", { from: "ConfirmView" });
   };
 
