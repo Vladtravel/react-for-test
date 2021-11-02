@@ -32,7 +32,7 @@ function App() {
           redirectTo="/confirmemail"
         />
 
-        <PrivateRoute
+        <PublicRoute
           path="/confirmemail"
           component={ConfirmView}
           redirectTo="/login"
