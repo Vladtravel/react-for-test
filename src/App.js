@@ -27,17 +27,7 @@ function App() {
 
         <Route path="/signup" component={RegisterForm} />
 
-        {/* <Route path="/confirmation">
-          <ConfirmView />
-        </Route> */}
-
         <Route path="/confirmation" component={ConfirmView} />
-
-        {/* <PrivateRoute
-          path="/confirmation"
-          component={ConfirmView}
-          redirectTo="/login"
-        /> */}
 
         <PublicRoute
           path="/login"
