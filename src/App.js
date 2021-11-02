@@ -28,7 +28,7 @@ function App() {
           path="/signup"
           component={RegisterForm}
           restricted
-          redirectTo="/confirm"
+          redirectTo="/contacts"
         />
         <PublicRoute path="/confirm" component={ConfirmView} restricted />
         <PublicRoute
