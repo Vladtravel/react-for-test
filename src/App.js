@@ -1,4 +1,4 @@
-import { Switch } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { useEffect } from "react";
 import Container from "./components/Container/Container";
@@ -32,7 +32,7 @@ function App() {
           redirectTo="/confirmation"
         />
 
-        <PublicRoute
+        <PrivateRoute
           path="/confirmation"
           component={ConfirmView}
           redirectTo="/login"
