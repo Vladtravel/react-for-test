@@ -6,6 +6,7 @@ import HomeView from "./components/HomeView/HomeView";
 import AppBar from "./components/AppBar/AppBar";
 import RegisterForm from "./components/RegisterForm/RegisterForm";
 import LoginForm from "./components/LoginForm/LoginForm";
+import ConfirmView from "./components/ConfirmView/ConfirmView";
 import ContactsView from "./components/ContactsView/ContactsView";
 import PrivateRoute from "./components/PrivateRoute";
 import PublicRoute from "./components/PublicRoute";
@@ -27,8 +28,9 @@ function App() {
           path="/signup"
           component={RegisterForm}
           restricted
-          redirectTo="/login"
+          redirectTo="/confirm"
         />
+        <PublicRoute path="/confirm" component={ConfirmView} restricted />
         <PublicRoute
           path="/login"
           component={LoginForm}
