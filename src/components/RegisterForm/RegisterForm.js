@@ -5,7 +5,7 @@ import operations from "../../redux/operations";
 import s from "./RegisterForm.module.css";
 
 function RegisterForm() {
-  // const history = useHistory();
+  const history = useHistory();
 
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -38,7 +38,7 @@ function RegisterForm() {
     setEmail("");
     setPassword("");
 
-    // history.push("/confirmation");
+    history.push("/confirmation");
   };
 
   return (
