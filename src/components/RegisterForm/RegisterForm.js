@@ -1,10 +1,11 @@
-import { NavLink } from "react-router-dom";
+import { useHistory, NavLink } from "react-router-dom";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import operations from "../../redux/operations";
 import s from "./RegisterForm.module.css";
 
 function RegisterForm() {
+  let history = useHistory();
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -35,6 +36,7 @@ function RegisterForm() {
     setName("");
     setEmail("");
     setPassword("");
+    history.push("/confirmation");
   };
 
   return (
