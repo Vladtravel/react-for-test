@@ -32,7 +32,11 @@ function App() {
           redirectTo="/confirmation"
         />
 
-        {/* <PrivateRoute path="/confirmation" component={ConfirmView} redirectTo="/confirmation" /> */}
+        <PrivateRoute
+          path="/confirmation"
+          component={ConfirmView}
+          redirectTo="/confirmation"
+        />
 
         <PublicRoute
           path="/login"
