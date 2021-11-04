@@ -69,7 +69,6 @@ const fetchContacts = () => (dispatch) => {
   axios
     .get("/contacts")
     .then(({ data }) => {
-      console.log(data.contacts);
       dispatch(actions.fetchContactsSuccess(data.contacts));
     })
     .catch((error) => dispatch(actions.fetchContactsError(error.message)));
@@ -81,8 +80,8 @@ const addContact = (data) => (dispatch) => {
   axios
     .post("/contacts", data)
     .then((res) => {
-      console.log(res);
-      dispatch(actions.addContactsSuccess(res));
+      console.log(res.data.contact);
+      dispatch(actions.addContactsSuccess(res.data.contact));
     })
     .catch((error) => dispatch(actions.addContactsError(error.message)));
 };
