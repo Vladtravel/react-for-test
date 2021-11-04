@@ -21,6 +21,7 @@ const register = (credential) => (dispatch) => {
     .then((res) => {
       // console.log(res.data.token);
       // token.set(res.data.token);
+      console.log(res.data);
       dispatch(actions.registerSuccess(res.data));
     })
     .catch((error) => dispatch(actions.registerError(error.message)));
