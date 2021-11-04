@@ -1,13 +1,12 @@
 import axios from "axios";
 import actions from "./actions";
 
-// axios.defaults.baseURL = "https://connections-api.herokuapp.com";
+axios.defaults.baseURL = "https://connections-api.herokuapp.com";
 
-axios.defaults.baseURL = "https://test-heroku-new.herokuapp.com/";
+// axios.defaults.baseURL = "https://test-heroku-new.herokuapp.com/";
 
 const token = {
   set(token) {
-    console.log(token);
     axios.defaults.headers.common["Authorization"] = `Bearer ${token}`;
   },
   unset() {
@@ -22,7 +21,7 @@ const register = (credential) => (dispatch) => {
     .then((res) => {
       // console.log(res.data.token);
       // token.set(res.data.token);
-      console.log(res.data);
+
       dispatch(actions.registerSuccess(res.data));
     })
     .catch((error) => dispatch(actions.registerError(error.message)));
@@ -32,7 +31,6 @@ const logIn = (credential) => (dispatch) => {
   axios
     .post("/users/login", credential)
     .then((res) => {
-      console.log(res.data.token);
       token.set(res.data.token);
       dispatch(actions.loginSuccess(res.data));
     })
