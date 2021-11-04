@@ -52,7 +52,7 @@ const ContactList = () => {
     // console.log(contacts);
     if (contacts.length) return;
     dispatch(operations.fetchContacts());
-  }, [contacts, dispatch]);
+  }, [dispatch]);
 
   const classes = useStyles();
 
