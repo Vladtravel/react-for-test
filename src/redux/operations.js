@@ -29,6 +29,7 @@ const logIn = (credential) => (dispatch) => {
   axios
     .post("/users/login", credential)
     .then((res) => {
+      console.log(res);
       token.set(res.data.token);
       dispatch(actions.loginSuccess(res.data));
     })
