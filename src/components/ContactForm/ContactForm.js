@@ -28,7 +28,7 @@ function ContactForm() {
         setName(value);
         break;
       case "email":
-        setName(value);
+        setEmail(value);
         break;
       case "number":
         setNumber(value);
