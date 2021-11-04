@@ -68,7 +68,7 @@ const fetchContacts = () => (dispatch) => {
   axios
     .get("/contacts")
     .then((res) => {
-      console.log(res.contacts);
+      console.log(res);
       dispatch(actions.fetchContactsSuccess(res.contacts));
     })
     .catch((error) => dispatch(actions.fetchContactsError(error.message)));
