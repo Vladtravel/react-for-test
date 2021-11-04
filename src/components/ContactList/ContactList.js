@@ -49,7 +49,6 @@ const ContactList = () => {
   const contacts = useSelector(selectors.getContactList);
 
   useEffect(() => {
-    // console.log(contacts);
     if (contacts.length) return;
     dispatch(operations.fetchContacts());
   }, [dispatch]);
@@ -63,19 +62,19 @@ const ContactList = () => {
           <TableRow className={classes.headRow}>
             <TableCell className={classes.headCell}>Name</TableCell>
             <TableCell className={classes.headCell}>Email</TableCell>
-            <TableCell className={classes.headCell}>Number</TableCell>
+            <TableCell className={classes.headCell}>Phone</TableCell>
             <TableCell className={classes.headCell}>Delete</TableCell>
           </TableRow>
         </TableHead>
         <TableBody className={classes.body}>
           {contacts &&
-            contacts.map(({ name, email, number, id }) => (
+            contacts.map(({ name, email, phone, id }) => (
               <TableRow className={classes.bodyRow} key={id}>
                 <TableCell className={classes.cell} component="td" scope="row">
                   {name}
                 </TableCell>
                 <TableCell className={classes.cell}>{email}</TableCell>
-                <TableCell className={classes.cell}>{number}</TableCell>
+                <TableCell className={classes.cell}>{phone}</TableCell>
                 <TableCell className={classes.cell}>
                   <IconButton
                     onClick={() => dispatch(operations.deleteContact(id))}
