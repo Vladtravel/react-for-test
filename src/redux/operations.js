@@ -80,8 +80,8 @@ const addContact = (data) => (dispatch) => {
   axios
     .post("/contacts", data)
     .then(({ data }) => {
-      console.log(data.contact);
-      dispatch(actions.addContactsSuccess(data.contact));
+      console.log(data);
+      dispatch(actions.addContactsSuccess(data));
     })
     .catch((error) => dispatch(actions.addContactsError(error.message)));
 };
