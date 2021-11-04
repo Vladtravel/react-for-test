@@ -79,9 +79,9 @@ const addContact = (data) => (dispatch) => {
   dispatch(actions.addContactsRequest());
   axios
     .post("/contacts", data)
-    .then((res) => {
-      console.log(res);
-      dispatch(actions.addContactsSuccess(res));
+    .then(({ data }) => {
+      console.log(data.data.contact);
+      dispatch(actions.addContactsSuccess(data.data.contact));
     })
     .catch((error) => dispatch(actions.addContactsError(error.message)));
 };
