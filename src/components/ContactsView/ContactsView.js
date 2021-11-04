@@ -14,7 +14,7 @@ function ContactsView() {
       <Filter />
       {isLoading && <p>{" Loading... "}</p>}
       {error && <p>{" Sorry, something goes wrong: " + error}</p>}
-      {/* <ContactList /> */}
+      <ContactList />
     </>
   );
 }

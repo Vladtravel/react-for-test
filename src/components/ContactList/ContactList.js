@@ -49,7 +49,7 @@ const ContactList = () => {
   const contacts = useSelector(selectors.getContactList);
 
   useEffect(() => {
-    console.log(contacts);
+    // console.log(contacts);
     if (contacts.length) return;
     dispatch(operations.fetchContacts());
   }, [contacts, dispatch]);

@@ -12,8 +12,12 @@ import PrivateRoute from "./components/PrivateRoute";
 import PublicRoute from "./components/PublicRoute";
 import operations from "./redux/operations";
 import "./App.module.css";
+import { useSelector } from "react-redux";
+import selectors from "./redux/selectors";
 
 function App() {
+  const email = useSelector(selectors.getUserEmail);
+
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(operations.getCurrentUser());
@@ -27,7 +31,10 @@ function App() {
 
         <Route path="/signup" component={RegisterForm} />
 
-        <Route path="/confirmation" component={ConfirmView} />
+        <Route
+          path="/confirmation"
+          render={() => <ConfirmView email={email} />}
+        />
 
         <PublicRoute
           path="/login"

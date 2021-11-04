@@ -2,6 +2,7 @@ import { useHistory, NavLink } from "react-router-dom";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import operations from "../../redux/operations";
+import ConfirmView from "../ConfirmView/ConfirmView";
 import s from "./RegisterForm.module.css";
 
 function RegisterForm() {
@@ -34,6 +35,8 @@ function RegisterForm() {
       return;
     }
     dispatch(operations.register({ name, email, password }));
+    ConfirmView(email);
+
     setName("");
     setEmail("");
     setPassword("");
