@@ -18,12 +18,16 @@ const useStyles = makeStyles({
 function ContactForm() {
   const dispatch = useDispatch();
   const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
   const [number, setNumber] = useState("");
   const handleInputChange = (e) => {
     const { name, value } = e.currentTarget;
 
     switch (name) {
       case "name":
+        setName(value);
+        break;
+      case "email":
         setName(value);
         break;
       case "number":
@@ -45,7 +49,7 @@ function ContactForm() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (name.trim() === "" || number.trim() === "") {
+    if (name.trim() === "" || email.trim() === "" || number.trim() === "") {
       alert("Fill all fields!");
       return;
     }
@@ -54,8 +58,9 @@ function ContactForm() {
       alert(`${existContact.name} is already in contacts.`);
       return;
     }
-    dispatch(operations.addContact({ name, number }));
+    dispatch(operations.addContact({ name, email, number }));
     setName("");
+    setEmail("");
     setNumber("");
   };
 
@@ -71,6 +76,17 @@ function ContactForm() {
         className={classes.textField}
         size="small"
         label="Name"
+        variant="outlined"
+      />
+
+      <TextField
+        type="text"
+        name="email"
+        value={email}
+        onChange={handleInputChange}
+        className={classes.textField}
+        size="small"
+        label="email"
         variant="outlined"
       />
 
