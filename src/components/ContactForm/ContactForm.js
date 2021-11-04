@@ -86,7 +86,7 @@ function ContactForm() {
         onChange={handleInputChange}
         className={classes.textField}
         size="small"
-        label="email"
+        label="Email"
         variant="outlined"
       />
 
