@@ -19,9 +19,6 @@ const register = (credential) => (dispatch) => {
   axios
     .post("/users/signup", credential)
     .then((res) => {
-      // console.log(res.data.token);
-      // token.set(res.data.token);
-
       dispatch(actions.registerSuccess(res.data));
     })
     .catch((error) => dispatch(actions.registerError(error.message)));
@@ -75,12 +72,10 @@ const fetchContacts = () => (dispatch) => {
 };
 
 const addContact = (data) => (dispatch) => {
-  console.log(data);
   dispatch(actions.addContactsRequest());
   axios
     .post("/contacts", data)
     .then(({ data }) => {
-      console.log(data.data.contact);
       dispatch(actions.addContactsSuccess(data.data.contact));
     })
     .catch((error) => dispatch(actions.addContactsError(error.message)));
