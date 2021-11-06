@@ -20,6 +20,7 @@ function ContactForm() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
+
   const handleInputChange = (e) => {
     const { name, value } = e.currentTarget;
 

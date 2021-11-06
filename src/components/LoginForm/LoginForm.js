@@ -68,7 +68,7 @@ function LoginForm() {
                 </label>
               </div>
               <button className={s.loginFormBody__button} type="submit">
-                Sign In
+                Log In
               </button>
             </form>
           </div>

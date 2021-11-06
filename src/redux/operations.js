@@ -102,6 +102,10 @@ const updateContact = (id) => (dispatch) => {
     .catch((error) => dispatch(actions.updateContactError(error.message)));
 };
 
+const repeatEmailVerify = (email) => (dispatch) => {
+  axios.post("/users/verify", email);
+};
+
 const operations = {
   register,
   logIn,
@@ -112,6 +116,7 @@ const operations = {
   addContact,
   deleteContact,
   updateContact,
+  repeatEmailVerify,
 };
 
 export default operations;

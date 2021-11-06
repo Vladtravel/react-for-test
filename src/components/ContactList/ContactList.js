@@ -51,7 +51,7 @@ const ContactList = () => {
   useEffect(() => {
     if (contacts.length) return;
     dispatch(operations.fetchContacts());
-  }, [dispatch]);
+  }, [contacts.length, dispatch]);
 
   const classes = useStyles();
 
