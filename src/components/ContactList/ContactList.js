@@ -1,50 +1,17 @@
 import { useSelector, useDispatch } from "react-redux";
 import operations from "../../redux/operations";
 import selectors from "../../redux/selectors";
-import "./ContactList.css";
+import s from "./ContactList.module.css";
+import Modal from "./Modal/Modal";
+import ContactForm from "../ContactForm/ContactForm";
 import PropTypes from "prop-types";
-import { useEffect } from "react";
-
+import { useState, useEffect } from "react";
 import IconButton from "@material-ui/core/IconButton";
 import DeleteIcon from "@material-ui/icons/Delete";
 
-import { makeStyles } from "@material-ui/core/styles";
-import Table from "@material-ui/core/Table";
-import TableBody from "@material-ui/core/TableBody";
-import TableCell from "@material-ui/core/TableCell";
-import TableContainer from "@material-ui/core/TableContainer";
-import TableHead from "@material-ui/core/TableHead";
-import TableRow from "@material-ui/core/TableRow";
-
-const useStyles = makeStyles({
-  container: {
-    boxShadow:
-      "0px 2px 1px -1px rgba(0,0,0,0.2), 0px 1px 1px 0px rgba(0,0,0,0.14), 0px 1px 3px 0px rgba(0,0,0,0.12)",
-    borderRadius: "4px",
-    width: 500,
-  },
-  headRow: {
-    backgroundColor: "#3f51b5",
-  },
-  body: {
-    "& tr:hover": {
-      backgroundColor: "rgba(0,0,0,0.1)",
-    },
-  },
-  bodyRow: {},
-  headCell: {
-    padding: 10,
-    color: "white",
-    textTransform: "uppercase",
-    letterSpacing: 1,
-  },
-  cell: {
-    padding: 10,
-  },
-});
-
 const ContactList = () => {
   const dispatch = useDispatch();
+  const [openModal, setOpenModal] = useState(false);
 
   const contacts = useSelector(selectors.getContactList);
 
@@ -53,29 +20,38 @@ const ContactList = () => {
     dispatch(operations.fetchContacts());
   }, [contacts.length, dispatch]);
 
-  const classes = useStyles();
+  const onContactClick = (e) => {
+    console.log(e);
+    // if (e.target.nodeName !== "TR") {
+    //   return;
+    // }
+
+    toggleModal();
+  };
+
+  const toggleModal = () => {
+    setOpenModal((prevState) => !prevState);
+  };
 
   return (
-    <TableContainer className={classes.container}>
-      <Table className={classes.table} aria-label="customized table">
-        <TableHead>
-          <TableRow className={classes.headRow}>
-            <TableCell className={classes.headCell}>Name</TableCell>
-            <TableCell className={classes.headCell}>Email</TableCell>
-            <TableCell className={classes.headCell}>Phone</TableCell>
-            <TableCell className={classes.headCell}>Delete</TableCell>
-          </TableRow>
-        </TableHead>
-        <TableBody className={classes.body}>
+    <div>
+      <table className={s.table}>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Delete</th>
+          </tr>
+        </thead>
+        <tbody>
           {contacts &&
             contacts.map(({ name, email, phone, id }) => (
-              <TableRow className={classes.bodyRow} key={id}>
-                <TableCell className={classes.cell} component="td" scope="row">
-                  {name}
-                </TableCell>
-                <TableCell className={classes.cell}>{email}</TableCell>
-                <TableCell className={classes.cell}>{phone}</TableCell>
-                <TableCell className={classes.cell}>
+              <tr key={id}>
+                <td>{name}</td>
+                <td>{email}</td>
+                <td>{phone}</td>
+                <td>
                   <IconButton
                     onClick={() => dispatch(operations.deleteContact(id))}
                     aria-label="delete"
@@ -83,12 +59,26 @@ const ContactList = () => {
                   >
                     <DeleteIcon />
                   </IconButton>
-                </TableCell>
-              </TableRow>
+                </td>
+                <td>
+                  <div onClick={onContactClick} className={s.update}>
+                    <svg
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                      class="NSy2Hd cdByRd RTiFqe P5kiYb"
+                    >
+                      <path d="M0 0h24v24H0V0z" fill="none"></path>
+                      <path d="M20.41 4.94l-1.35-1.35c-.78-.78-2.05-.78-2.83 0L3 16.82V21h4.18L20.41 7.77c.79-.78.79-2.05 0-2.83zm-14 14.12L5 19v-1.36l9.82-9.82 1.41 1.41-9.82 9.83z"></path>
+                    </svg>
+                  </div>
+                </td>
+              </tr>
             ))}
-        </TableBody>
-      </Table>
-    </TableContainer>
+        </tbody>
+      </table>
+      {openModal && <Modal />}
+    </div>
   );
 };
 ContactList.propTypes = {

@@ -1,0 +1,42 @@
+table {
+  border-collapse: collapse;
+  width: auto;
+  text-align: center;
+}
+
+table th {
+  font-weight: 500;
+  font-size: 16px;
+  color: #ffffff;
+  background-color: #2458b3;
+  white-space: pre-wrap;
+  padding: 5px;
+  line-height: 13px;
+  vertical-align: middle;
+  border: 1px solid #354251;
+}
+
+table td {
+  font-size: 14px;
+  padding: 5px;
+  text-align: left;
+}
+
+table tbody tr:hover {
+  transform: scale(1.02);
+  background-color: #94cbf2;
+  color: white;
+  cursor: pointer;
+}
+
+table tbody tr:hover .update {
+  opacity: 1;
+}
+
+.update {
+  width: 20px;
+  height: 20px;
+  opacity: 0;
+
+  fill: green;
+}
